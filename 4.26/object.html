@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  var obj1 = {};
+  obj1.name ='张三'
+  obj1.age=22
+  obj1.hello = function(){
+    console.log('hello world');
+  }
+
+  console.log(obj1)
+  console.log(obj1.name)
+  console.log(obj1.hello())
+
+  var obj2 = {}
+    obj2.name='zong'
+    obj2.age=11,
+    obj2.email='33173863453@qq.com'
+
+    //对象枚举
+    for(k in obj2){
+      console.log(k,obj2[k])
+    }
+
+</script>
+</body>
+</html>

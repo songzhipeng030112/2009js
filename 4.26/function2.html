@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>构造函数</title>
+</head>
+<body>
+<script>
+  // var arr = new Array()
+
+  function person(name,age,sex){
+    this.name=name
+    this.age=age
+    this.sex=sex
+  }
+
+  person.prototype.name='noname'
+  person.prototype.age=0
+  person.prototype.sex='男'
+
+
+
+  var p1 = new person()
+  console.log(p1)
+  console.log(p1.name)
+  console.log(p1.age)
+  console.log(p1.sex)
+
+  var p2 = new person()
+  console.log(p2)
+  console.log(p2.name)
+  console.log(p2.age)
+  console.log(p2.sex)
+
+  var p3 =new person('zhangsan',11,'女')
+  console.log(p3)
+
+
+
+</script>
+</body>
+</html>

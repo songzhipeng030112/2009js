@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  //value  属性的值
+  //configureable  属性是否可删除
+  //enumerable     属性是否可枚举
+  //writcable      属性是否可写
+
+  var obj = {}
+  Object.defineProperty(obj,"name",{
+    value: "zhangsan",
+    writable:true,
+    configurable: true,
+    enumerable: true,
+  })
+
+  Object.defineProperty(obj,'age',{
+    value:11,
+    writable:true,
+    configurable:true,
+    enumerable:true,
+  })
+
+  obj.email='zongxijing@qq.com'
+  //删除
+  delete obj.age
+  //枚举
+  for(k in obj){
+    console.log(k,obj[k])
+  }
+
+  //修改
+  obj.name='宗喜景'
+  obj.age=111
+  console.log(obj)
+
+
+</script>
+</body>
+</html>

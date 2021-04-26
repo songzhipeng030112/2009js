@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  var obj = {
+    name:'宗喜景',
+    age:17,
+    sex:'女',
+  }
+  //添加一个email
+  obj.email='zongxijing@qq.com'
+
+  console.log(obj)
+  //删除obj属性
+  delete obj.age
+  console.log(obj)
+
+  for(k in obj){
+    console.log(k,obj[k])
+  }
+
+</script>
+</body>
+</html>
