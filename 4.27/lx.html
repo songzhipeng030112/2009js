@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  //去除两边元素
+  var arr = [11,22,33,44,55,66,77];
+
+  Array.prototype.trim = function(){
+    this.pop()
+    this.shift()
+  }
+
+  console.log(arr)
+  arr.trim()
+  console.log(arr)
+
+
+</script>
+</body>
+</html>
