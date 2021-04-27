@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var bbb = 'Hello1111'
+
+    function test(){
+
+        function fn(){
+            console.log(bbb)
+        }
+        return fn
+    }
+
+    test()()
+
+</script>
+</body>
+</html>
