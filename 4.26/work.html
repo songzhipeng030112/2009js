@@ -5,20 +5,28 @@
     <title>Title</title>
 </head>
 <body>
-<div class="div"></div>
+<button id="btn">点击</button>
+
+<p class="p1">AAAAAA</p>
+<p class="p1">BBBBBB</p>
+<p class="p1">CCCCCC</p>
+<p class="p1">DDDDDD</p>
+
+<span>你是煞笔吧</span>
+
 <script>
   var arr = [11,22,22,55,66,11,88,66,77,66];
   //找出元素 66 在数组中的位置
-  arr.forEach(function(k,v){
-      if(k==66){
-          console.log(v)
+  arr.forEach(function(v,k){
+      if(v==66){
+          console.log(k)
       }
   })
   //数组的和
   var sum =0
-  arr.forEach(function(k,v){
+  arr.forEach(function(v,k){
       // console.log(k)
-      sum+=k
+      sum+=v
   })
   console.log(sum)
 
@@ -46,18 +54,20 @@ console.log(a)
 
 
 
-  function $(selector,context){
-      // 如果未传递 context 参数，则默认取 document 值
-      context = context||document;
-      //通过判断selector字符串第一个字符来判别    #id   .class   element
-      if(selector.charAt(0) === "#")//通过id查找
-          return context.getElementById(selector.slice(1));
-      //selector.slice(1)截取字符串除去第一个字符后面的字符串，如#id-->id
-      if(selector.charAt(0) === ".")//通过classname查找
-          return context.getElementsByClassName(selector.slice(1));
-      else//元素名查找
-          return context.getElementsByTagName(selector);
+  function $(el){
+      // console.log(el)
+      var i = el[0]
+      if(i == "#"){
+          return document.getElementById('el')
+      }else if(i == '.'){
+          return document.getElementsByClassName('el')
+      }else{
+          return document.getElementsByTagName('el')
+      }
   }
+  console.log($('#btn'))
+  // console.log($('.p1'))
+  // console.log($('span'))
 
 
 </script>
