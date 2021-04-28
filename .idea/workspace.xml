@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5cb6e8af-7235-4172-be3e-6c118d15b3b0" name="默认变更列表" comment="">
+    <list default="true" id="5cb6e8af-7235-4172-be3e-6c118d15b3b0" name="默认变更列表" comment="练习">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/4.27/ajax.html" beforeDir="false" afterPath="$PROJECT_DIR$/4.27/ajax.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/4.27/lx.html" beforeDir="false" afterPath="$PROJECT_DIR$/4.27/lx.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/4.27/function6.html" beforeDir="false" afterPath="$PROJECT_DIR$/4.27/function6.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +68,7 @@
       <workItem from="1619484376301" duration="12058000" />
       <workItem from="1619513762917" duration="5633000" />
       <workItem from="1619519870408" duration="3273000" />
+      <workItem from="1619570360471" duration="14059000" />
     </task>
     <task id="LOCAL-00001" summary="111">
       <created>1619513833723</created>
