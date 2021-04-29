@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5cb6e8af-7235-4172-be3e-6c118d15b3b0" name="默认变更列表" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/4.28/ajax.html" beforeDir="false" afterPath="$PROJECT_DIR$/4.28/ajax.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +15,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -71,7 +69,7 @@
       <workItem from="1619513762917" duration="5633000" />
       <workItem from="1619519870408" duration="3273000" />
       <workItem from="1619570360471" duration="17441000" />
-      <workItem from="1619656609290" duration="9112000" />
+      <workItem from="1619656609290" duration="10314000" />
     </task>
     <task id="LOCAL-00001" summary="111">
       <created>1619513833723</created>
