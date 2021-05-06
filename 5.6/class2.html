@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  //构造方法
+  //ES6之前
+  // function Person(){
+  //
+  // }
+  //
+  // let p1 = new Person()
+  // console.log(p1.__proto__.constructor)
+
+
+  //ES6构造方法
+  class Person{
+    //构造方法
+    constructor(name,age) {
+      this.name = name
+      this.age = age
+    }
+  }
+
+  let p1 = new Person("zhangsan",99)
+  console.log(p1.name)
+
+  // 构造函数与构造方法的区别？
+  // Class在语法上更加贴合面向对象的写法
+  // Class实现继承更加易读、易理解
+  // 更易于写Java等后端语言的程序员使用
+  // 本质还是语法糖，使用prototype
+</script>
+</body>
+</html>

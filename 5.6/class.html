@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //ES6之前
+
+
+    // //自定义构造函数
+    // function Person(name,age){
+    //     this.name = name
+    //     this.age = age
+    // }
+    //
+    // Person.prototype.say = function (){
+    //     console.log(this.name,this.age)
+    // }
+    //
+    // let p1 = new Person('zhangsan',11)
+    // let p2 = new Person('lisi',22)
+
+
+    //ES6
+    class Person{
+        //构造器方法 实例化对象自动调用
+        constructor(name,age) {
+            this.name = name
+            this.age = age
+        }
+        say(){
+            console.log(this.name,this.age)
+        }
+    }
+
+    //通过 new + class 实例化对象
+    let p1 = new Person('wangwu',11)
+    let p2 = new Person('lisi',22)
+
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>静态方法</title>
+</head>
+<body>
+<script>
+  class Person{
+    constructor(name,age) {
+      this.name = name
+      this.age = age
+    }
+
+    //静态属性
+    static number = 0
+
+    //静态方法
+    static say(){
+      console.log('你是煞笔')
+    }
+
+    //实例的方法
+    eat(){
+      console.log(this.name,"在吃屎")
+    }
+  }
+
+  Person.say()     //访问静态方法
+  console.log(Person.number)    //访问静态属性
+  let p1 = new Person('zhangsan',22)
+  p1.eat()
+
+
+</script>
+</body>
+</html>
