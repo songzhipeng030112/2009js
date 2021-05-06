@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // function fun(){
+    //     console.log(1)
+    // }
+    // functionfun(){
+    //     console.log(2)
+    // }
+    // fun()
+
+    // var a = {'x':0};
+    // var b = a;
+    // a.x =1;
+    // console.log(b.x);    //1
+    //
+    // function Foo(){}
+    // var f1 = new Foo()
+    // console.log(f1 instanceof Foo)   //true
+
+    // function a(){
+    //     var user = '张三';
+    //     console.log(this.user);    //undefined
+    //     console.log(this);         //window
+    // }
+    // a()
+
+    function func(n,o) {
+        console.log(o)
+        return {
+            func:function(m){
+                return func(m,n);
+            }
+        };
+    }
+    var a = func(0);  a.func(1);  a.func(2);  a.func(3);
+
+
+    function test(){
+        b();
+        var a=1;
+        function b(){
+            console.log(1);
+            console.log(a);
+            var a=2;
+        }
+    }
+    test();
+
+    function f(){
+        console.log(this)    //window
+    }
+    f()
+
+
+    function Foo(){
+        console.log(a)        //undefined
+        var a = 'hello'       //hello
+        console.log(a)
+    }
+    Foo()
+
+
+
+    function fun(){
+        console.log(num)
+        var num = 1
+    }
+    fun()
+
+
+
+    var b
+    function f2() {
+        b = 'change'
+    }
+    console.log(b)
+    f2()
+    console.log(b)
+
+
+    function createCar(color,whell){ //createCar工厂
+        var obj = new Object
+        obj.color = color
+        obj.whell = whell
+        return obj
+    }
+    var cat1 = createCar('红色','4')
+    console.log(cat1.color)     //红色
+
+
+
+
+</script>
+</body>
+</html>

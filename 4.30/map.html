@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const  o1 = {
+        name:"zhangsan",
+    }
+    const  o2 = {
+        name:"lisi",
+    }
+
+    const m = new Map()
+    console.log(Map.prototype)
+
+    m.set(o1,{name:'张三',address:'北京昌平'})
+    m.set(o2,{name:'李四',address:'北京朝阳'})
+
+    m.forEach(function(v,k){
+        console.log("k=>",k,"v=>",v)
+    })
+
+
+    const size = m.size    //获取 map 的元素个数
+    console.log(size)
+
+
+    m.delete(o2)    //通过key删除元素
+
+    m.clear()      //清空map
+
+
+</script>
+</body>
+</html>
