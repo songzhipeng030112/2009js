@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5cb6e8af-7235-4172-be3e-6c118d15b3b0" name="默认变更列表" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/4.29/string.html" beforeDir="false" afterPath="$PROJECT_DIR$/4.29/string.html" afterDir="false" />
-    </list>
+    <list default="true" id="5cb6e8af-7235-4172-be3e-6c118d15b3b0" name="默认变更列表" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -74,7 +70,7 @@
       <workItem from="1619656609290" duration="14295000" />
       <workItem from="1619699198327" duration="5000" />
       <workItem from="1619743530708" duration="2329000" />
-      <workItem from="1620263191244" duration="16120000" />
+      <workItem from="1620263191244" duration="16986000" />
     </task>
     <task id="LOCAL-00001" summary="111">
       <created>1619513833723</created>
