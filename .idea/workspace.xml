@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5cb6e8af-7235-4172-be3e-6c118d15b3b0" name="默认变更列表" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/5.7/module.html" beforeDir="false" afterPath="$PROJECT_DIR$/5.7/module.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/5.10/object.html" beforeDir="false" afterPath="$PROJECT_DIR$/5.10/object.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +34,10 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="JsBowerSettings">
+    <bower-package value="" />
+    <bower.json value="" />
+  </component>
   <component name="ProjectId" id="1rdrMmtZePGDTHTVTpnvmHLUbxA" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -50,13 +52,22 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Confirmation" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="PsalmProjectConfiguration">
     <option name="selectedConfigurationId" value="局部" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\86152\AppData\Roaming\Subversion</configuration>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="默认任务">
       <changelist id="5cb6e8af-7235-4172-be3e-6c118d15b3b0" name="默认变更列表" comment="" />
@@ -85,7 +96,10 @@
       <workItem from="1620439664497" duration="9990000" />
       <workItem from="1620530488046" duration="113000" />
       <workItem from="1620607013989" duration="1817000" />
-      <workItem from="1620609113613" duration="8975000" />
+      <workItem from="1620609113613" duration="9866000" />
+      <workItem from="1620635187735" duration="97000" />
+      <workItem from="1620635402461" duration="1084000" />
+      <workItem from="1620637986629" duration="4403000" />
     </task>
     <task id="LOCAL-00001" summary="111">
       <created>1619513833723</created>
@@ -141,5 +155,9 @@
     <MESSAGE value="练习" />
     <MESSAGE value="ajax" />
     <option name="LAST_COMMIT_MESSAGE" value="ajax" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
