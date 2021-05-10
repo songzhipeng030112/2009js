@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  //代理  拦截器  过滤器
+
+  let obj1 = {
+    name : 'zhangsan',
+    age : 11,
+  }
+
+  //ji检测某个属性是否存在于对象中
+  console.log('name' in obj1)
+  console.log('xxx' in obj1)
+
+
+  let p1 = new Proxy(obj1,{
+
+    //拦截in操作
+    has(t,prop){
+      console.log("in 操作：",prop)
+    },
+
+    //拦截delete操作
+    get(t,p){
+      console.log('delete 属性：',prop)
+    },
+
+    //拦截属性的读操作
+    get(t,p){
+      console.log('读取了属性：',p)
+      if(p=='sex'){
+        console.log('禁止读取sex属性')
+      }
+    },
+
+    //当写某个属性时触发
+    set(t,p,v,r){
+      console.log(11111)
+      console.log(t)
+      console.log(p)
+      console.log(v)
+      console.log(r)
+      console.log(22222)
+    },
+  })
+
+  //delete操作
+  delete p1.xxx
+
+  //in操作
+  console.log('name' in p1)
+  console.log('xxx' in p1)
+
+
+</script>
+</body>
+</html>

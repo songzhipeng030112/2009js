@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>生成器</title>
+</head>
+<body>
+<script>
+  function * f1(){
+
+    let a = 11
+    let b = 22
+    let c = function (){
+      console.log('hello world')
+    }
+    yield a+b
+    yield a++
+    yield c
+  }
+
+  let f = f1()
+  console.log(f.next())
+  console.log(f.next())
+  f.next().value()
+
+
+</script>
+</body>
+</html>

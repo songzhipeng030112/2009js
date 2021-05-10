@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>
+<script src="jquery-3.6.0.min.js"></script>
+<script>
+    // $.ajax({
+    //     url: "http://vue.api.comcto.com/api/password1.php",
+    //     method: 'get',
+    //     success: function (res) {
+    //         console.log(res);
+    //         $.ajax({
+    //             url: "http://vue.api.comcto.com/api/password2.php",
+    //             method: 'get',
+    //             success: function (res) {
+    //                 console.log(res);
+    //                 $.ajax({
+    //                     url: "http://vue.api.comcto.com/api/password3.php",
+    //                     method: 'get',
+    //                     success: function (res) {
+    //                         console.log(res);
+    //                         $.ajax({
+    //                             url: "http://vue.api.comcto.com/api/password4.php",
+    //                             method: 'get',
+    //                             success: function (res) {
+    //                                 console.log(res);
+    //                             }
+    //                         })
+    //                     }
+    //                 })
+    //             }
+    //         })
+    //     }
+    // })
+
+
+
+
+
+
+
+
+
+
+    // //使用Promise
+    // let pass = []        //保存密码
+    // new Promise(function (resolve, reject) {
+    //     //第一步
+    //     $.ajax({
+    //         url: "http://vue.api.comcto.com/api/password1.php",
+    //         type: "get",
+    //         success: function (data) {
+    //             console.log("第 1 位密码: ", data)
+    //             pass.push(data)
+    //             resolve(pass)     // 异步操作成功时调用 resolve 函数
+    //         }
+    //     })
+    // }).then(function (d) {
+    //     //第二步
+    //     return new Promise(function (resolve, reject) {
+    //         $.ajax({
+    //             url: "http://vue.api.comcto.com/api/password2.php",
+    //             type: "get",
+    //             success: function (data) {
+    //                 console.log("第 2 位密码: ", data)
+    //                 pass.push(data)
+    //                 // console.log(pass)
+    //                 resolve(pass)
+    //             }
+    //         })
+    //     })
+    // }).then(function (d) {
+    //     //第三步
+    //     return new Promise(function (resolve, reject) {
+    //         $.ajax({
+    //             url: "http://vue.api.comcto.com/api/password3.php",
+    //             type: "get",
+    //             success: function (data) {
+    //                 console.log("第 3 位密码: ", data)
+    //                 pass.push(data)
+    //                 resolve(pass)
+    //             }
+    //         })
+    //     })
+    // }).then(function (d) {
+    //     //第 4 步
+    //     return new Promise(function (resolve, reject) {
+    //         $.ajax({
+    //             url: "http://vue.api.comcto.com/api/password4.php",
+    //             type: "get",
+    //             success: function (data) {
+    //                 console.log("第 4 位密码: ", data)
+    //                 pass.push(data)
+    //                 resolve(pass)
+    //             }
+    //         })
+    //     })
+    // }).then(function (d) {
+    //     console.log("最终密码: ", d)
+    // })
+
+
+
+
+    
+    
+    
+    
+    
+    new Promise(function (resolve, reject) {
+        var xhr = new XMLHttpRequest()
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+
+                console.log("接受服务器的数据"+xhr.responseText);
+                resolve(xhr.responseText)
+            }
+        }
+        xhr.open("get","http://vue.api.comcto.com/api/password1.php")
+        xhr.send()
+    }).then(function(data) {
+
+        console.log("then方法通过resolve方法收到第一个的数据"+data);
+
+        //请求第二个密码
+        return new Promise(function (resolve,reject) {
+            var xhr = new XMLHttpRequest()
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                console.log("接受服务器的数据"+xhr.responseText);
+                resolve(xhr.responseText)
+            }
+        }
+        xhr.open("get","http://vue.api.comcto.com/api/password2.php")
+        xhr.send()
+        })
+
+
+
+    }).then(function(data) {
+        console.log("then方法通过resolve方法收到第二个的数据"+data);
+
+        //请求第三个密码
+        return new Promise(function (resolve,reject) {
+            var xhr = new XMLHttpRequest()
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                console.log("接受服务器的数据"+xhr.responseText);
+                resolve(xhr.responseText)
+            }
+        }
+        xhr.open("get","http://vue.api.comcto.com/api/password3.php")
+        xhr.send()
+        })
+    }).then(function(data) {
+        console.log("then方法通过resolve方法收到第三个的数据"+data);
+        return new Promise(function (resolve,reject) {
+            var xhr = new XMLHttpRequest()
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                console.log("接受服务器的数据"+xhr.responseText);
+                resolve(xhr.responseText)
+            }
+        }
+        xhr.open("get","http://vue.api.comcto.com/api/password4.php")
+        xhr.send()
+        })
+    }).then(function(data) {
+        console.log("then方法通过resolve方法收到第四个的数据"+data);
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
