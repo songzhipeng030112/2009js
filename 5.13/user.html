@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>用户列表</title>
+  <style>
+    .grid {
+      margin: auto;
+      width: 530px;
+      text-align: center;
+    }
+    .grid table {
+      border-top: 1px solid #C2D89A;
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .grid th,td {
+      padding: 10px;
+      border: 1px dashed #F3DCAB;
+      height: 35px;
+      line-height: 35px;
+    }
+    .grid th {
+      background-color: #F3DCAB;
+    }
+    .grid .book {
+      padding-bottom: 10px;
+      padding-top: 5px;
+      background-color: #F3DCAB;
+    }
+  </style>
+</head>
+<body>
+<div id="app">
+  <div class="grid">
+    <div>
+      <h1>用户管理</h1>
+      <div class="book">
+        <div>
+          <label for="id">
+            UID：
+          </label>
+          <input type="text" id="id" v-model="user_id" v-bind:disabled="status">
+          <label for="name">
+            用户名：
+          </label>
+          <input type="text" id="name" v-model="user_name">
+          <button v-on:click="clickAdd">提交</button>
+        </div> 
+      </div>
+    </div>
+    <table>
+      <thead>
+      <tr>
+        <th>UID</th>
+        <th>用户名</th>
+        <th>Email</th>
+        <th>操作</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr v-for="(item,k) in list" :key="item.user_id">
+        <td>{{item.user_id}}</td>
+        <td>{{item.user_name}}</td>
+        <td>{{item.email}}</td>
+        <td>
+          <a href="" v-on:click.prevent="edit(k)">编辑</a>
+          <span>|</span>
+          <a href="" v-on:click.prevent="del(k)">删除</a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<script src="../js/vue.2.6.12.min.js"></script>
+<script src="../js/axios.min.js"></script>
+<script>
+  new Vue({
+    el:'#app',
+    data:{
+      status:false,     //disabled 默认为可用状态
+      user_id:"",
+      user_name:"",
+      list:[],         //数据列表
+    },
+    methods:{
+      //删除数据
+      del(i){
+        // this.list.splice(i,1)
+        let uid = this.list[i].user_id
+        // console.log('uid',uid)
+        let self = this
+        //删除用户
+        axios.delete(`http://localhost:3000/user/delete?uid=${uid}`).then(function(res){
+          console.log(res)
+          self.list.splice(i,1)
+        })
+      },
+      clickAdd(){
+
+        let self = this
+        //判断编辑还是添加
+        console.log('status',this.status)
+        if(this.status){
+          // let user_id = self.user_id
+          // let user_name = self.user_name
+          // console.log('要修改的内容：',user_id,user_name)
+          let user ={
+            user_id : self.user_id,
+            user_name : self.user_name,
+          }
+          console.log(user)
+          let uid = self.user_id
+          let username = self.user_name
+          axios.put("http://localhost:3000/user/update",user).then(function(res){
+            console.log(res)
+            self.list.forEach(function(v){
+              if(v.user_id== uid){
+                v.user_name = username
+              }
+            })
+          })
+
+        // 遍历list找到 id = this.bookid
+        //   self.list.forEach(function (v,k){
+        //     if(v.user_id==user_id){
+        //       //要更新的元素
+        //       v.user_name = user_name
+        //     }
+        //   })
+          // 清空input的值
+          self.user_id = ""
+          self.user_name = ""
+          self.status = false
+        }else {
+          //添加数据
+          let user_info = {
+            user_id : this.user_id,
+            user_name : this.user_name,
+          }
+          console.log(user_info)
+          axios.post("http://localhost:3000/user/add",user_info).then(function(res){
+            console.log("服务器返回的信息",res.data)
+
+            self.list.unshift(user_info)
+            //添加之后清空输入框内容
+            self.user_id = ""
+            self.user_name = ""
+          })
+        }
+      },
+      edit(i){
+        let self = this
+        console.log("要修改的索引：",i)
+        console.log("要修改的内容：",self.list[i])
+        //将数据填充到input中
+        self.user_id = self.list[i].user_id,
+        self.user_name = self.list[i].user_name
+
+        //禁止修改id
+        self.status = true;
+      }
+    },
+    //在创建阶段请求接口
+    created(){
+      let self = this
+      let api_url = "http://localhost:3000/user/list";  //接口地址
+      axios.get(api_url).then(function(res){
+        self.list = res.data
+      })
+    }
+  })
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>改变样式</title>
+</head>
+<body>
+<style>
+  .pcolor{
+    color:red;
+  }
+  .psize{
+    font-size: 30px;
+  }
+
+</style>
+<div id="app">
+<p v-bind:class="{pcolor:pc,psize:ps}">Hello world</p>
+<button v-on:click="changeColor">改变颜色</button>
+<button v-on:click="changeSize">改变字号</button>
+</div>
+<script src="../js/vue.2.6.12.min.js"></script>
+<script src="../js/axios.min.js"></script>
+<script>
+  new Vue({
+    el:"#app",
+    data:{
+      pc:true,
+      ps:false,
+    },
+    methods:{
+      //点击按钮改变样式
+      changeColor(){
+        this.pc = !this.pc
+      },
+      changeSize(){
+        this.ps = !this.ps
+      },
+    }
+  })
+
+
+</script>
+
+
+</body>
+</html>

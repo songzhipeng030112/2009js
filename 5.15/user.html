@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户注册</title>
+</head>
+<body>
+<div id="app">
+  <h2>用户注册</h2>
+  用户名：  <input type="text" v-model.lazy="username"><br>
+  Email： <input type="text" v-model.lazy="useremail"><br>
+  手机号：  <input type="text" v-model.lazy="mobile"><br>
+  密码：   <input type="password" v-model="pass1"><br>
+  确认密码： <input type="password" v-model="pass2"><br>
+  <input type="submit" v-on:click="regist" value="注册" :disabled="regstatus">
+</div>
+
+<script src="../js/vue.2.6.12.min.js"></script>
+<script src="../js/axios.min.js"></script>
+<script>
+  new Vue({
+    el:"#app",
+    data:{
+      username:"",
+      useremail:"",
+      mobile:"",
+      pass1:"",
+      pass2:"",
+      regstatus:true,
+    },
+    methods:{
+        regist(){
+            let user_info = {
+                name : this.username,
+                email : this.useremail,
+                mobile : this.mobile,
+                pass : this.pass2,
+            }
+            //请求接口
+            let api = "http://localhost:3001/user/regist"
+            axios.post(api,user_info).then(function(res){
+                console.log('服务器返回的数据：',res.data)
+
+            })
+        }
+    },
+    computed:{},
+    //侦听器
+    watch:{
+      username(v){
+        //请求接口 检查用户名是否存在
+        let api = "http://localhost:3001/check/username?name="+v
+        console.log(api)
+        axios.get(api).then(function(res){
+            console.log('服务器返回数据：',res.data)
+            //根据错误判断
+            if(res.data.error>0){
+                alert('请换一个用户名')
+            }else{
+                console.log('用户名可用')
+            }
+        })
+      },
+
+      useremail(v){
+          console.log(v)
+          let api = "http://localhost:3001/check/email?email="+v
+          axios.get(api).then(function(res){
+              console.log(res.data)
+              if(res.data.error>0){
+                  alert('email不可用')
+              }else{
+                  console.log('email可用')
+              }
+          })
+      },
+
+     mobile(v){
+        console.log(v)
+        let api = "http://localhost:3001/check/mobile?mobile="+v
+        axios.get(api) .then(function(res){
+            console.log("服务器返回",res.data)
+            if(res.data.error>0){
+                alert('手机号已存在')
+            }else{
+                console.log('手机号可用')
+            }
+        })
+     },
+
+     pass2(v){
+          console.log(v)
+         if(v === this.pass1){
+             this.regstatus = false
+         }
+     }
+
+
+
+    },
+  })
+
+
+</script>
+</body>
+</html>

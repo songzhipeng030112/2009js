@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  // class person{
+  //   constructor(name='未知',age) {
+  //     this.name = name
+  //     this.age = age
+  //   }
+  // }
+  // class student extends person{
+  //   constructor(name,age,sex) {
+  //   }
+  // }
+  // let s = new student('李四',18,'男')
+  // console.log(s.name)
+
+
+//   const promise = new Promise((resolve, reject) =>{
+//     console.log(1)
+//     resolve()
+//     console.log(2)
+//   })
+//
+//   promise.then(() => {
+//     console.log(3)
+//   })
+//   console.log(4)
+// //1 2 4 3
+//
+//
+//   for(var i=0;i<10;i++){
+//     setTimeout(function(){
+//       console.log(i)
+//     })
+//   }
+
+
+  // var arr = [...'hello'];
+  // console.log(arr)
+  //
+  //
+  // class person{
+  //   constructor(name='未知',age) {
+  //     this.name = name
+  //   }
+  //   say(){
+  //     console.log('my name is'+this.name)
+  //   }
+  // }
+  // class student extends person{
+  //   say(){
+  //     console.log('我的名字叫'+this.name)
+  //   }
+  // }
+  // let s = new student()
+  // s.say()
+
+
+  // var arr1 = ['a','b'];
+  // var arr2 = ['c'];
+  // console.log([...arr1,...arr2])
+
+
+  // let pro = new Promise(function(resolve, reject){
+  //   resolve()
+  // })
+  // pro.then(function(value){
+  //   console.log('200')
+  // },function(){
+  //   console.log('404')
+  // })
+
+
+  // class user{
+  //   constructor() {
+  //   }
+  // }
+  //
+  //
+  // class person{
+  //   constructor(name='未知',age) {
+  //     this.name = name
+  //     this.age = age
+  //   }
+  //   show(){
+  //     console.log(this.name)
+  //   }
+  // }
+  // let p = new person('张三',20)
+  // p.show()
+
+
+  // function person(name,age=20){
+  //   console.log(name+","+age)
+  // }
+  // person("Amy",18)
+  // person("Amy","")
+  // person("Amy")
+
+
+  // var f = (a,b) => a+b
+  // console.log(f(6,2))
+  //
+  //
+  // var f = () => {
+  //   console.log(this)
+  // }
+  // f('hello')
+
+
+  // let pro = new Promise(function(resolve, reject){
+  //   reject()
+  // })
+  // pro.then(function(value){
+  //   console.log('success')
+  // },function(){
+  //   console.log('error')
+  // })
+
+
+  const promise = new Promise((resolve, reject)=>{
+    resolve('success1')
+    reject('error')
+    resolve('success2')
+  })
+
+  promise.then((res)=>{
+    console.log(res)
+  }).catch((err)=>{
+    console.log(err)
+  })
+
+
+  let [a,[[b],c]] = [1,[[2],3]]
+  console.log(b)
+
+
+</script>
+</body>
+</html>

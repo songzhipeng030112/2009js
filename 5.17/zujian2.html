@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <hello-world1></hello-world1>
+        <hr>
+        <hello-world2></hello-world2>
+    </div>
+<script src="../js/vue.2.6.12.min.js"></script>
+<script>
+    let CA = {
+        data(){
+            return {
+                msg1: 'AAAAAAA'
+            }
+        },
+        template:`
+        <div>
+            <p>Hello 11111</p>
+            <p>{{msg1}}</p>    
+        </div>
+        `
+    }
+
+    let CB = {
+        methods:{
+            btn1(){
+                alert('CB')
+            }
+        },
+        template:`
+        <div>
+            <p>Hello 2222</p>
+            <button @click="btn1">btn1</button>
+        </div>
+        `
+    }
+
+    new Vue({
+        el:"#app",
+        components:{
+            "hello-world1" : CA,
+            "hello-world2" : CB,
+        }
+    })
+
+
+
+</script>
+
+
+</body>
+</html>
