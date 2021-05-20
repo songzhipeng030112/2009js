@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>子组件传值</title>
+</head>
+<body>
+<div id="app">
+  <p>{{num}}</p>
+  <add-number @add-number="addNum"></add-number>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+  let AddNum = {
+    template:
+            `
+    <button @click="$emit('add-number',1)">++</button>
+    `
+  }
+
+
+  new Vue({
+    el:"#app",
+    data:{
+      num : 0
+    },
+    methods:{
+      addNum(v){
+        this.num+=v
+      }
+    },
+    components:{
+      'add-number':AddNum
+    }
+  })
+
+
+
+</script>
+</body>
+</html>

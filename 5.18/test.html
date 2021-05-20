@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <li>
+                <span>姓名</span>
+                <span>登录名</span>
+                <span>手机号码</span>
+            </li>
+            <li v-for="item in list">
+                <span>{{item.name}}</span>
+                <span>{{item.userName}}</span>
+                <span>{{item.roleid}}</span>
+            </li>
+        </ul>
+        <ol>
+            <li>登录名: <input type="text" v-model="userName"></li>
+            <li>密码: <input type="password"></li>
+            <li>姓名: <input type="text" v-model="name"></li>
+            <li>联系电话: <input type="text" v-model="roleid"></li>
+            <li>角色: <input type="text"></li>
+        </ol>
+        <button v-on:click="add" v-bind:add="asd">提交</button>
+        <button>返回</button>
+
+    </div>
+</body>
+
+</html>
+<script src="../js/vue.2.6.12.min.js"></script>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            list: [{
+                "id": 1,
+                "name": "张明",
+                "userName": "zhangming",
+                "roleid": 1
+            },
+            {
+                "id": 2,
+                "name": "王晗",
+                "userName": "wanghan",
+                "roleid": 2
+            },
+            {
+                "id": 3,
+                "name": "周杰",
+                "userName": "zhoujie",
+                "roleid": 2
+            }],
+            userName: null,
+            name: null,
+            roleid: null,
+            asd:null
+        },
+        methods: {
+            add() {
+                let name1 = this.name
+                let userName1 = this.userName
+                let roleid1 = this.roleid
+                let self = this
+
+                console.log(this.name);
+                if (this.name == null) {
+                    alert("姓名不能为空")
+                }else if(this.userName == null){
+                    alert('登录名不能为空')
+                }else if(this.roleid == null){
+                    alert('roleid不能为空')
+                } else {
+                    this.list.forEach(function (v, k) {
+                        if (v.userName == userName1) {
+                            alert("用户名重复")
+                            self.asd=false
+                        } else {
+                            self.asd=true
+
+                        }
+                    })
+                }
+                console.log(this.asd);
+                if(this.asd==true){
+                    self.list.push(
+                                {
+                                    "name": name1,
+                                    "userName": userName1,
+                                    "roleid": roleid1
+                                }
+                            )
+
+                }
+
+
+
+
+
+
+            }
+        }
+
+    })
+</script>

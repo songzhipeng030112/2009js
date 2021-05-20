@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <router-link to="/login">登录</router-link>
+  <router-link to="/regist">注册</router-link>
+
+
+  <router-view></router-view>
+</div>
+<script src="../js/vue.js"></script>
+<script src="../js/vue-router.js"></script>
+<script>
+    //定义组件
+  let Regist = {
+    template: `<div><h2>注册</h2>
+  <p>用户名： <input type="text"></p>
+  <p>密码： <input type="password"></p>
+  <p>确认密码： <input type="password"></p>
+  <p><button>注册</button></p></div>`
+  }
+
+  let Login = {
+    template:  `<div><h2>登录</h2>
+  <p>用户名： <input type="text"></p>
+  <p>密码： <input type="password"></p>
+  <p><button>登录</button></p>
+  </div>`
+  }
+
+  // 定义路由
+  let routes = [
+      {path:'/',redirect:'/login'},   //默认访问
+      {path:'/login',component:Login},
+      {path:'/regist',component:Regist},
+  ]
+
+  //创建 router实例
+  let router = new VueRouter({
+      routes
+  })
+
+  //实例 vue
+  new Vue({
+      el:'#app',
+      router
+  })
+
+
+</script>
+</body>
+</html>
